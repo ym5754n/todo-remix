@@ -1,7 +1,7 @@
 import { Todo } from "@prisma/client";
 import { LoaderFunctionArgs, json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { prisma } from "~/lib/db.server";
+import { prisma } from "~/lib/prisma.server";
 
 export const loader = async ({
   params,

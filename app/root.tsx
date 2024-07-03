@@ -11,14 +11,14 @@ import "./tailwind.css";
 
 import { json } from "@remix-run/node";
 import type { Todo } from "@prisma/client";
-import { prisma } from "~/lib/db.server";
+import { prisma } from "~/lib/prisma.server";
 
 export const loader = async () => {
   const todos = await prisma.todo.findMany();
   return json(todos);
 }
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout() {
   const todos: Todo[] = useLoaderData();
 
   return (
